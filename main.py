@@ -1,7 +1,9 @@
 def main():
     book_path = "books/frankenstein.txt"
-    print_report(book_path)
     
+    print_report(book_path)
+
+#print a report with number of words and number of letters
 def print_report(book_path):
     text = read_book_text(book_path)
     print(f"--- Begin report of {book_path} ---")
@@ -16,13 +18,16 @@ def print_report(book_path):
     
     print("--- End report ---")
 
+#open file and return text in a string 
 def read_book_text(path):
     with open(path) as f:
         return f.read()
-    
+
+#return number of words in text    
 def count_words(text):
     return len(text.split())
 
+#return dict with key = letter in lower case, value = number of occurrences of this letter
 def count_characters(text):
     text = text.lower()
     text_dict = dict()
